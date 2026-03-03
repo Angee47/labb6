@@ -1,0 +1,26 @@
+package carwash;
+
+import java.util.PriorityQueue;
+
+public class EventQueue {
+
+    // PriorityQueue lagrar händelser och sorterar dem automatiskt, så att den händelse med tidigast tid alltid ligger först.
+    private PriorityQueue<Event> queue = new PriorityQueue<>();
+
+    // Lägger till en ny händelse i kön.
+    // e = händelsen som ska läggas in.
+    public void add(Event e) {
+        queue.add(e);
+    }
+
+    // Hämtar nästa händelse i kön och tar bort den.
+    // Returnerar null om kön är tom.
+    public Event getNextEvent() {
+        return queue.poll(); // Returnerar den första (minsta) händelsen i kön. Tar samtidigt bort den från kön. Returnerar null om kön är tom
+    }
+
+    // Kontrollerar om kön är tom.
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    }
+}
