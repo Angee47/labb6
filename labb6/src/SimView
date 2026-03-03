@@ -1,0 +1,77 @@
+import events.Event;
+import carwash.Carwash;
+
+public class SimView {
+
+    // Den här metoden körs varje gång en händelse har exekverats i simuleringen.
+    // Den skriver ut detaljerad statistik om tillståndet i biltvätten.
+    public void update(SimState state, Event event) {
+
+        // Vi typomvandlar SimState till Carwash eftersom det är den
+        // konkreta klassen som innehåller statistiken vi vill skriva ut.
+        Carwash cw = (Carwash) state;
+
+        // Visuell avdelare i utskriften
+        System.out.println("====================================");
+
+        // Skriver ut tiden då händelsen sker
+        System.out.println("Time: " + state.getTime());
+
+        // Skriver ut vilken sorts händelse som precis kördes (Arrival, Leave, Stop etc.)
+        System.out.println("Event: " + event.getName());
+
+        // ----------------------------
+        //        Statiska värden
+        // ----------------------------
+
+        // Antal bilar som just nu står i kön
+        System.out.println("Current queue size: " + cw.getQueueSize());
+
+        // Maxkapacitet för kön (hur många bilar som får plats)
+        System.out.println("Max queue size: " + cw.getMaxQueueSize());
+
+        // Antal snabba tvättmaskiner som är lediga just nu
+        System.out.println("Available fast machines: " + cw.getFastMachines());
+
+        // Antal långsamma tvättmaskiner som är lediga just nu
+        System.out.println("Available slow machines: " + cw.getSlowMachines());
+
+        // ----------------------------
+        //       Dynamisk statistik
+        // ----------------------------
+
+        // Totalt antal bilar som har tvättats färdigt
+        System.out.println("Total washed cars: " + cw.getWashedCars());
+
+        // Antal bilar som lämnade simuleringen för att kön var full
+        System.out.println("Rejected cars (queue full): " + cw.getRejectedCars());
+
+        // Totalt antal bilar som någon gång stått i kön
+        System.out.println("Total cars that queued: " + cw.getTotalQueuedCars());
+
+        // Total tid som alla bilar har väntat tillsammans
+        System.out.println("Total waiting time: " + cw.getTotalWaitingTime());
+
+        // Uträknad genomsnittlig väntetid (total väntetid / antal som köat)
+        System.out.println("Average waiting time: " + cw.getAverageWaitingTime());
+
+        // ----------------------------
+        //        Maskinstatistik
+        // ----------------------------
+
+        // Totalt antal tidsenheter som snabba maskiner varit upptagna
+        System.out.println("Fast machines busy time: " + cw.getFastBusyTime());
+
+        // Totalt antal tidsenheter som långsamma maskiner varit upptagna
+        System.out.println("Slow machines busy time: " + cw.getSlowBusyTime());
+
+        // Totalt antal maskintimmar (alla maskiner tillsammans)
+        System.out.println("Total machine busy time: " + cw.getTotalBusyTime());
+
+        // Andel av tiden maskinerna har varit upptagna (0–1)
+        System.out.println("Machine utilization: " + cw.getUtilization());
+
+        // Visuell avdelare i utskriften
+        System.out.println("====================================\n");
+    }
+}
