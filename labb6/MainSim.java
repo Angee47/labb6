@@ -3,7 +3,7 @@ package labb6;
 public class MainSim {
 
 	/**
-	 * Startar programmet, skapar tillståndet för simulatorn som finns i SimSettings
+	 * Startar programmet, skapar tillståndet för simulatorn som finns i @SimSettings
 	 * samt startar Simulationen
 	 * 
 	 * @author André Angeria
