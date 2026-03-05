@@ -182,6 +182,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Könsstorlek
 	 * @return Könsstorlek
 	 */
 	public int getQueueSize() {
@@ -189,6 +190,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Könsmaximala storlek
 	 * @return Könsmaximala storlek
 	 */
 	public int getMaxQueueSize() {
@@ -196,6 +198,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Antal bilar som blivit Rejected
 	 * @return Antal bilar som blivit Rejected :/
 	 */
 	public int getRejectedCars() {
@@ -203,6 +206,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Antal tvättade bilar
 	 * @return Antal tvättade bilar
 	 */
 	public int getWashedCars() {
@@ -210,6 +214,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Antal i kön under hela simuleringen
 	 * @return Antal i kön under hela simuleringen
 	 */
 	public int getTotalQueuedCars() {
@@ -217,6 +222,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Antal snabba maskiner
 	 * @return Antal snabba maskiner
 	 */
 	public int getFastMachines() {
@@ -224,6 +230,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Antal söliga maskiner
 	 * @return Antal söliga maskiner
 	 */
 	public int getSlowMachines() {
@@ -231,6 +238,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Totala väntetiden
 	 * @return Totala väntetiden
 	 */
 	public double getTotalWaitingTime() {
@@ -238,6 +246,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Medel väntetiden
 	 * @return Medel väntetiden (Totaltid som gått / Alla bilar i som varit i
 	 *         simuleringen
 	 */
@@ -251,6 +260,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Tiden som snabb maskin arbetat
 	 * @return Tiden som snabb maskin arbetat
 	 */
 	public double getFastBusyTime() {
@@ -258,6 +268,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Tiden som sölig maskin arbetat
 	 * @return Tiden som sölig maskin arbetat
 	 */
 	public double getSlowBusyTime() {
@@ -265,13 +276,15 @@ public class CarWashState extends SimState {
 	}
 
 	/**
-	 * @return Tide som snabb+sölig arbetat
+	 * Totala tiden maskiner arbetat
+	 * @return Tiden som snabb+sölig arbetat
 	 */
 	public double getTotalBusyTime() {
 		return fastBusyTime + slowBusyTime;
 	}
 
 	/**
+	 * Totala tiden maskinerna stått stilla
 	 * @return Totala tiden maskinerna stått stilla
 	 */
 	public double getTotalIdleTime() {
@@ -279,6 +292,7 @@ public class CarWashState extends SimState {
 	}
 
 	/**
+	 * Hur effektiva tvättarna varit igång
 	 * @return Hur aktiva tvättarna har varit under simulering (Är som en bedöming
 	 *         0.0 -> 1.0)
 	 */
