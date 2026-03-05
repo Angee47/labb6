@@ -6,7 +6,7 @@ import sim.Simstate;
 public abstract class Events {
 	
 	public Events(double time) {
-		this.time = time; //sparar tiden
+		this.time = time; //sparar tiden i objektet
 	}
 	
 	public double getTime() {
@@ -17,3 +17,4 @@ public abstract class Events {
 	
 
 }
+
