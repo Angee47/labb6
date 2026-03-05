@@ -1,11 +1,13 @@
 package labb6;
 
-import events.Event;
-import events.EventQueue;
 
-
-// Klassen Simulator är "motorn" i simuleringen.
-// Den kör alla händelser i ordning och uppdaterar tillståndet.
+/**
+ * Klassen Simulator är "motorn" i simuleringen.
+ * Den kör alla händelser i ordning och uppdaterar tillståndet.
+ * @author André Angeria
+ * @author Ekram Alhroub
+ * @author Norhan Mousa
+ */
 public class Simulator {
 
     // Det aktuella tillståndet i simuleringen, t.ex. Carwash
@@ -25,14 +27,17 @@ public class Simulator {
         this.view = view;   // Spara view som visar statistik
     }
 
-    // Huvudloop som kör simuleringen
+   
+    /**
+     * Huvudloop som kör simuleringen
+     */
     public void run() {
         // Loopen fortsätter så länge det finns händelser kvar
         // och simuleringen inte har stoppats
         while (!queue.isEmpty() && !state.isStopped()) {
 
             // Hämtar nästa händelse från kön (den med lägst tid)
-            Events nextEvent = queue.getNextEvent();
+            Event nextEvent = queue.getNextEvent();
 
             // Uppdaterar simuleringens nuvarande tid till händelsens tid
             state.setTime(nextEvent.getTime());
